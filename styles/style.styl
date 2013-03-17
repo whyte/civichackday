@@ -1,0 +1,217 @@
+@import 'node_modules/nib/index'
+
+html
+  background-color: #BFBFBF 
+  color: #00142f
+  font-family: "HelveticaNeue-Light", "Helvetica Neue Light", "Helvetica Neue", Helvetica, Arial, "Lucida Grande", sans-serif; 
+  text-align: center 
+  padding: 0px
+  margin:0px
+body
+  width: 1200px
+  padding: 0px
+  margin: 0px auto 0px auto
+
+  a
+    text-decoration:none
+
+  h1
+    font-weight: lighter
+    
+    
+  h2
+    font-family: Georgia 
+    font-style: italic
+    font-size: 25px 
+    font-weight: lighter
+    margin-bottom: 75px
+    &:after 
+      content : ""
+      display : block
+      width: 150px
+      height: 5px
+      background-color: black
+      text-align:center
+      margin: 30px auto 30px auto
+  p
+    font-size: 14px 
+    font-weight: lighter
+
+  header
+    height: 425px
+    background-image: url("../images/topBanner.jpg")
+    background-color: black
+    color: white 
+    border-bottom: 5px solid #a7cf00
+    position:relative 
+    margin:-21px 0px
+    h1
+      position: relative 
+      top: 265px
+    p
+      position: relative
+      top: 265px
+      span
+        margin: 0px
+        font-size: 11px
+        font-weight: bold
+        text-transform: uppercase
+        &:after
+          content: ""
+          width: 8px
+          height: 8px
+          margin-left: 9px
+          margin-right: 9px
+          display : inline-block
+          background-image: url('../images/tinyStar.png')
+          
+        &:last-child
+          &:after 
+            background-image: none
+  footer
+    background-color: black
+    padding: 15px 100px 15px 100px
+    height: 25px
+    span
+      float: left
+      color: #c4c4c4
+      font-size: 13px
+      font-weight: bold
+      line-height: 25px
+    a.button
+      float:right
+      background-color: #A4CC42
+      color: black
+      font-size: 11px
+      padding: 5px 25px 5px 25px
+      font-weight: bold
+  section
+    box-sizing: border-box
+    padding: 65px 100px 90px 100px
+
+    &:nth-child(even)
+      background-color: #E1E1E1
+    &:nth-child(odd)
+      background-color: #D2D2D2
+
+    &#about
+      article 
+        text-align: left
+        column-width: 259px
+        column-rule: 1px outset #B5B5B5
+        line-height: 24px;
+
+        height: 269px
+        column-gap: 50px
+
+        p:first-child 
+          margin-top: 0px
+
+    &#offer
+      h3 
+        font-size: 23px 
+        font-weight: 300
+        margin-bottom: 30px
+    &#organisers
+      ul 
+        list-style: none
+        margin: 0px 0px 0px 0px
+        padding: 0px
+        li
+          display: inline-block
+          margin: 0px 61px 0px 0px
+          &:last-child
+            margin-right: 0px
+          img 
+            width: 125px 
+            height: 125px
+            border-radius: 125px
+            border:5px solid #e1e1e1
+          p.name
+            font-size: 15px
+            font-weight: bold
+            margin: 20px 0px 0px 0px
+          p.affiliation
+            font-size: 11px
+            font-weight: normal
+            margin: 2px 0px 0px 0px
+            text-transform: uppercase 
+
+    &#schedule
+      article
+        text-align: center
+
+        ul
+          list-style: none
+          padding: 0px
+          column-count: 2
+          column-rule: 1px outset #B5B5B5
+          column-gap: 40px
+          height: 250px
+          width: 630px
+          margin : 0px auto
+          li
+            text-align: left
+            margin-bottom: 10px
+            p 
+              width: 200px
+              display: inline-block
+              vertical-align: top
+              margin:0px
+              padding: 0px
+              font-size: 14px
+            span
+              width: 90px
+              font-size: 10px 
+              font-weight: bold 
+              margin-right: 0px 
+              display: inline-block
+              vertical-align: top
+              line-height: 17px
+
+    &#locationAndContact 
+      #map
+        width: 760px 
+        height: 255px
+        margin: 0px 20px 0px 0px
+        display: inline-block
+        vertical-align: top
+        text-align: left
+      .details
+        display: inline-block
+        vertical-align: top
+        text-align: left
+        font-size: 14px 
+        font-weight: lighter
+        margin: 0px 
+        width: 169px
+        border-left: 1px solid #b2b2b2
+        padding: 0px 0px 0px 20px
+        .address
+          margin-bottom: 112px
+          h3 
+            margin-top: 0px
+            margin-bottom: 5px
+            font-size: 18px
+          p 
+            margin-top: 0px
+            font-weight: lighter
+            font-size: 14px
+        .contact 
+          h3
+            font-size: 11px
+            font-weight: bold
+            margin-bottom:0px
+          p
+            margin: 5px 0
+            padding: 0px
+
+
+.button
+  background-color: #0A54BA
+  color : #e1e1e1 
+  font-weight: 300
+  font-size: 18px
+  padding: 10px  40px 10px 40px 
+  border-radius: 2px
+  text-decoration: none

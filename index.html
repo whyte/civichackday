@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset=utf-8>
+    <title>Galaxy Zoo Confrence</title>
+    <link rel="stylesheet" href="/styles/style.css" type="text/css">
+    <link rel="stylesheet" href="/styles/leaflet.css" type="text/css">
+
+    <!--[if lt IE 9]>
+			<script src="lib/html5shiv.js"></script>
+			<link rel="stylesheet" type="text/css" href="/styles/leaflet.ie.css">
+		<![endif]-->
+
+    <script type="text/javascript" src="/lib/leaflet-src.js"></script>
+    <script type="text/javascript" src="/lib/jquery-1.9.1.min.js"></script>
+    
+    <script type="text/javascript">
+    	$(document).ready(function(){
+    		var map = L.map('map').setView([-33.866667, 151.2], 13);
+
+				L.tileLayer('http://{s}.tile.cloudmade.com/703a104d15d44e2885f6cedeaaec6d30/22677/256/{z}/{x}/{y}.png').addTo(map);
+
+				var icon = L.icon({
+					 iconUrl: 'images/marker-icon.png',
+    			 iconRetinaUrl: 'images/marker-icon@2x.png',
+    			 shadowUrl: 'images/marker-shadow.png'
+				});
+
+				L.marker([-33.866667, 151.2], {icon: icon}).addTo(map)
+    	});
+    </script>
+    
+</head>
+
+<body>
+
+		<header>
+			<h1>Galaxy Morphology in the Era of Large Surveys</h1>
+			<p class='details'><span class='date'>10 May 2001</span><span class='venue'>Royal astronomical society</span><span class='address'>london, United kingodm</span></p>
+		</header>
+    <section id='about'>
+    	<h2>About the Conference</h2>
+    	<article>
+    		<p> Important clues to the formation history of galaxies can be found in their morphologies. These data provide complimentary information to the star formation history and chemical composition as revealed by photometry and spectra. This meeting will focus on recent results in extragalactic astronomy which used morphological information on galaxies obtained from large survey data. </p>
+    		<p>The sheer size of recent extragalactic surveys had made the visual classification of galaxy morphologies impractical. The Galaxy Zoo project (www.galaxyzoo.org) solved this problem by asking members of the public to help classify galaxies via an internet tool, and has been part of a reinvigoration of interest in the morphologies of galaxies and what they reveal and the formation processes.  For example, the morphological information collected by Galaxy Zoo has shown itself to be a powerful database for studying galaxy evolution, with now more than 30 peer-reviewed papers on a variety of topics from the study of local mergers, to red spirals and blue ellipticals, tidal dwarf galaxies, dustlanes, the morphologies of AGN hosts, and the discovery of "green peas" and "Voorwerjpies" and more.</p>
+    		<p>
+    			This meeting will bring together a variety of researchers working in the area of extragalactic astronomy, including members of the Galaxy Zoo team, to discuss recent results and preview forthcoming developments.
+    		</p>
+    	</article>
+    </section>
+    <section id='organisers'>
+    	<h2>Conference Organisers</h2>
+    		<ul>
+    			<li> <img src='images/people/kelly.png'></img> <p class='name'>Kelly Borden</p> <p class='affiliation'>Adler</p></li>
+    			<li> <img src='images/people/kelly.png'></img> <p class='name'>Kelly Borden</p> <p class='affiliation'>Adler</p></li>
+    			<li> <img src='images/people/kelly.png'></img> <p class='name'>Kelly Borden</p> <p class='affiliation'>Adler</p></li>
+    			<li> <img src='images/people/kelly.png'></img> <p class='name'>Kelly Borden</p> <p class='affiliation'>Adler</p></li>
+    			<li> <img src='images/people/kelly.png'></img> <p class='name'>Kelly Borden</p> <p class='affiliation'>Adler</p></li>
+    		</ul>
+    </section>
+    <section id='schedule'>
+    	<h2>Schedule of Events</h2>
+    	<article>
+    		<ul>
+    			<li>
+    				<span class='time'>10-10.30am</span> <p>Coffee</p>
+    			</li>
+    			<li>
+    				<span class='time'>10.30-11am</span> 
+    				<p>Importance of morphology on our
+							understanding galaxy evolution
+							(Invited, TBC)
+						</p>
+    			</li>
+    			<li>
+    				<span class='time'>11am-11:30am</span> 
+    				<p> Connecting Theory and
+                    Observations of Galaxy Morphology
+                    (Invited, TBC)
+            </p>
+    			</li>
+    			<li>
+    				<span class='time'>11:30am-12pm</span> 
+    				<p> Contributed science talks</p>
+    			</li>
+    			<li>
+    				<span class='time'>12-1pm</span> 
+    				<p> Automated methods of getting
+                    morphology, or morphology proxies
+                   (Invited, TBC)
+            </p>
+
+    			</li>
+    			<li>
+    				<span class='time'>1-2pm</span> 
+    				<p> Lunch</p>
+    			</li>
+    			<li>
+    				<span class='time'>2.00-3pm</span> 
+    				<p> Contributed science talks </p>
+    			</li>
+    			<li>
+    				<span class='time'>3-3.30pm</span> 
+    				<p> Morphology at high redshift 
+                   (Invited: Jennifer Lotz)
+            </p>
+    			</li>
+    			<li>
+    				<span class='time'>3.30-4pm</span>
+    				<p>Tea</p>
+    			</li>
+    			<li>
+    				<span class='time'>4-6pm</span> 
+    				<p>RAS monthly meeting (free to all)</p>
+    			</li>
+    			
+
+
+    		</ul>
+    	</article>
+    </section>
+    <section id='offer'>
+    	<h3>Free to RAS members $15 ( $5 for students; note students can join the RAS for only $1)</h3>
+    	<a class='button' href='/register'>Register</a>
+    </section>
+    <section id='locationAndContact'>
+    	<h2>Location & Contact Info</h2>
+    	<div id='map'></div>
+
+    	<div class='details'>
+	    	<div class='address'> 
+	    		<h3>Burlington House</h3> 
+	    		<p> 31 Burlington Gardens <br/>
+						  London W1J 0PG
+					</p>
+				</div>
+	    	<div class='contact'>
+	    		<h3>Contact</h3>
+	    		<p class='phone'>+44 905 392 09</p>
+	    		<p class='email'><a href='mailto:gzconf@zooniverse.org'>gzconf@zooniverse.org</a></p>
+	    		<p class='twitter'><a href='http://twitter.com/gzconf'>@gzconf</a></p>
+	    	</div>
+	   </div>
+    </section>
+
+    <footer>
+    	<span class='copyright'> Galaxy Zoo Confrence  ©2013</span>
+    	<a  href='register' class='button'>Register</a>
+    </footer>
+</body>
+</html>
