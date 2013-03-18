@@ -15,13 +15,13 @@ body a {
   text-decoration: none;
 }
 body h1 {
-  font-weight: lighter;
+  font-weight: 200;
 }
 body h2 {
   font-family: Georgia;
   font-style: italic;
   font-size: 25px;
-  font-weight: lighter;
+  font-weight: 200;
   margin-bottom: 75px;
 }
 body h2:after {
@@ -35,7 +35,7 @@ body h2:after {
 }
 body p {
   font-size: 14px;
-  font-weight: lighter;
+  font-weight: 200;
 }
 body header {
   height: 425px;
@@ -49,6 +49,9 @@ body header {
 body header h1 {
   position: relative;
   top: 265px;
+  margin: 0px 200px;
+  padding-bottom: 12px;
+  border-bottom: 1px solid rgba(255,255,255,0.3);
 }
 body header p {
   position: relative;
@@ -57,8 +60,9 @@ body header p {
 body header p span {
   margin: 0px;
   font-size: 11px;
-  font-weight: bold;
+  font-weight: 600;
   text-transform: uppercase;
+  letter-spacing: 1px;
 }
 body header p span:after {
   content: "";
@@ -81,7 +85,7 @@ body footer span {
   float: left;
   color: #c4c4c4;
   font-size: 13px;
-  font-weight: bold;
+  font-weight: 600;
   line-height: 25px;
 }
 body footer a.button {
@@ -90,7 +94,7 @@ body footer a.button {
   color: #000;
   font-size: 11px;
   padding: 5px 25px 5px 25px;
-  font-weight: bold;
+  font-weight: 600;
 }
 body section {
   -webkit-box-sizing: border-box;
@@ -147,7 +151,7 @@ body section#organisers ul li img {
 }
 body section#organisers ul li p.name {
   font-size: 15px;
-  font-weight: bold;
+  font-weight: 600;
   margin: 20px 0px 0px 0px;
 }
 body section#organisers ul li p.affiliation {
@@ -190,7 +194,7 @@ body section#schedule article ul li p {
 body section#schedule article ul li span {
   width: 90px;
   font-size: 10px;
-  font-weight: bold;
+  font-weight: 600;
   margin-right: 0px;
   display: inline-block;
   vertical-align: top;
@@ -209,7 +213,7 @@ body section#locationAndContact .details {
   vertical-align: top;
   text-align: left;
   font-size: 14px;
-  font-weight: lighter;
+  font-weight: 200;
   margin: 0px;
   width: 169px;
   border-left: 1px solid #b2b2b2;
@@ -225,12 +229,12 @@ body section#locationAndContact .details .address h3 {
 }
 body section#locationAndContact .details .address p {
   margin-top: 0px;
-  font-weight: lighter;
+  font-weight: 200;
   font-size: 14px;
 }
 body section#locationAndContact .details .contact h3 {
   font-size: 11px;
-  font-weight: bold;
+  font-weight: 600;
   margin-bottom: 0px;
 }
 body section#locationAndContact .details .contact p {
@@ -240,7 +244,7 @@ body section#locationAndContact .details .contact p {
 .button {
   background-color: #0a54ba;
   color: #e1e1e1;
-  font-weight: 300;
+  font-weight: 600;
   font-size: 18px;
   padding: 10px 40px 10px 40px;
   -webkit-border-radius: 2px;
