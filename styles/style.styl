@@ -3,15 +3,17 @@
 html
   background-color: #BFBFBF 
   color: #00142f
-  font-family: "HelveticaNeue-Light", "Helvetica Neue Light", "Helvetica Neue", Helvetica, Arial, "Lucida Grande", sans-serif; 
   text-align: center 
   padding: 0px
   margin:0px
+
+
 body
   width: 1200px
   padding: 0px
   margin: 0px auto 0px auto
-
+  background-color: #e7e7e7
+  box-shadow: 0 0 5px 5px #888
   a
     text-decoration:none
 
@@ -20,59 +22,100 @@ body
     
     
   h2
-    font-family: Georgia 
-    font-style: italic
     font-size: 25px 
     font-weight: 200
     margin-bottom: 75px
-    &:after 
-      content : ""
-      display : block
-      width: 150px
-      height: 5px
-      background-color: black
-      text-align:center
-      margin: 30px auto 30px auto
+    width: 480px
+    height: 53px 
+    color: white
+    line-height: 53px
+    margin-left: auto
+    margin-right: auto
   p
     font-size: 14px 
     font-weight: 200
 
   header
-    height: 425px
-    background-image: url("../images/topBanner.jpg")
-    background-color: black
+    height: 426px
+    background-image: url("/images/top-banner.jpg")
     color: white 
-    border-bottom: 5px solid #a7cf00
     position:relative 
-    margin:-21px 0px
-    h1
-      position: relative 
-      top: 265px
-      margin:0px 200px 
-      padding-bottom: 12px
-      border-bottom: 1px solid rgba(256,256,256, 0.3)
+    border-top: 5px solid black
+    text-align: center
+    box-sizing: border-box
+    padding-top: 70px
 
-    p
-      position: relative
-      top: 265px
-      span
+  nav 
+    background-color: #F8F8F8
+    z-index: 20
+    box-shadow: 0 1px 10px rgba(0, 0, 0, 0.5)
+    width: 1200px
+    position: relative
+
+    &.pos1 
+      &:after, &:before
+        left: 10%
+    &.pos2 
+      &:after, &:before
+        left: 30%
+    &.pos3 
+      &:after, &:before
+        left: 50%
+    &.pos4
+      &:after, &:before
+        left: 70%
+    &.pos5
+      &:after, &:before
+        left: 90%
+
+    &:after, &:before 
+      top: 100%
+      border: solid transparent
+      content: " "
+      height: 0
+      width: 0
+      position: absolute
+      pointer-events: none
+      transition: left 0.5s ease-in-out
+
+    &:after
+      border-color: rgba(248, 248, 248, 0)
+      border-top-color: #F8F8F8
+      border-width: 8px
+      left: 50%
+      margin-left: -8px
+
+
+    &:before 
+      border-color: rgba(248, 248, 248, 0)
+      border-top-color: #F8F8F8
+      border-width: 14px
+      left: 50%
+      margin-left: -14px
+
+    .navLinks
+      margin-left: auto
+      margin-right: auto
+      a 
+        width: 235px
+        height: 50px 
+        display: inline-block
+        box-sizing: border-box
+        padding:  14px 0px 0px 0px 
+        color: black
         margin: 0px
-        font-size: 11px
-        font-weight: 600
-        text-transform: uppercase
-        letter-spacing: 1px
-        &:after
-          content: ""
-          width: 8px
-          height: 8px
-          margin-left: 9px
-          margin-right: 9px
-          display : inline-block
-          background-image: url('../images/tinyStar.png')
-          
+        border-right: 1px solid #DFDFDF
+        font-size: 15px
+        &.active
+          color: #0084ff
+        // border-left: 1px solid #FFFFFF
+        &:first-child
+          border-left: none
         &:last-child
-          &:after 
-            background-image: none
+          border-right: none
+    &.fixed
+      position: fixed 
+      top: 0px
   footer
     background-color: black
     padding: 15px 100px 15px 100px
@@ -92,89 +135,72 @@ body
       font-weight: 600
   section
     box-sizing: border-box
-    padding: 65px 100px 90px 100px
+    padding: 60px 185px 60px 185px
+    text-align: center
 
     &:nth-child(even)
-      background-color: #E1E1E1
+      background-color: #E7E7E7
     &:nth-child(odd)
-      background-color: #D2D2D2
+      background-color: #E0E0E0
 
-    &#about
+    &#what
       article 
         text-align: left
-        column-width: 259px
-        column-rule: 1px outset #B5B5B5
-        line-height: 24px;
+        line-height: 24px
+    
 
-        height: 269px
-        column-gap: 50px
+    &#youth
+      article
+        text-align: left
+        line-height: 24px
 
-        p:first-child 
-          margin-top: 0px
-
-    &#offer
+    &#participate
       h3 
         font-size: 23px 
         font-weight: 300
         margin-bottom: 30px
-    &#organisers
+      p 
+        text-align: left
       ul 
         list-style: none
-        margin: 0px 0px 0px 0px
+        margin: 80px 0px 0px 0px
         padding: 0px
+        width: 100%
+        height: 1000px
         li
-          display: inline-block
-          margin: 0px 61px 0px 0px
-          &:last-child
+          float:left 
+          margin: 0px 150px 0px 0px
+          width: 170px
+          height: 500px
+          text-align: center
+          &:first-child
+            padding-left: 0px 
+          &:nth-child(3n+3)  
             margin-right: 0px
           img 
-            width: 125px 
-            height: 125px
-            border-radius: 125px
-            border:5px solid #e1e1e1
-          p.name
+            width: 150px
+            
+          p
             font-size: 15px
-            font-weight: 600
+            text-align: center
+            width: 100%
             margin: 20px 0px 0px 0px
-          p.affiliation
-            font-size: 11px
-            font-weight: normal
-            margin: 2px 0px 0px 0px
-            text-transform: uppercase 
+           
 
-    &#schedule
-      article
+    &#signup, &#sponsor
+      background-color: #0D97F7
+      height: 240px
+      h2
+        margin-top:0px
+        padding-top: 0px
+        width: 100%
         text-align: center
-
-        ul
-          list-style: none
-          padding: 0px
-          column-count: 2
-          column-rule: 1px outset #B5B5B5
-          column-gap: 40px
-          height: 250px
-          width: 630px
-          margin : 0px auto
-          li
-            text-align: left
-            margin-bottom: 10px
-            p 
-              width: 200px
-              display: inline-block
-              vertical-align: top
-              margin:0px
-              padding: 0px
-              font-size: 14px
-            span
-              width: 90px
-              font-size: 10px 
-              font-weight: 600 
-              margin-right: 0px 
-              display: inline-block
-              vertical-align: top
-              line-height: 17px
-
-    &#locationAndContact 
+        margin-bottom: 25px
+      .button
+        background-color: #D6FE55
+        color: black
+    &#where 
+      padding: 60px 100px 60px 100px
       #map
         width: 760px 
         height: 255px
@@ -211,6 +237,18 @@ body
             margin: 5px 0
             padding: 0px
 
+#sponsorLogos
+  ul 
+    list-style: none
+    padding:0px
+    margin:0px
+    width: 100%
+    height: 300px
+    li 
+      float: left 
+      width: 276px
+      margin-bottom: 30px
+
 
 .button
   background-color: #0A54BA
@@ -218,5 +256,27 @@ body
   font-weight: 600
   font-size: 18px
   padding: 10px  40px 10px 40px 
-  border-radius: 2px
+  border-radius: 5px
   text-decoration: none
+
+
+.arrow_box 
+  position: relative
+  background: #0D97F7
+
+.arrow_box:after 
+  top: 100%
+  border: solid transparent
+  content: " "
+  height: 0
+  width: 0
+  position: absolute
+  pointer-events: none
+
+
+.arrow_box:after 
+  border-color: rgba(13, 151, 247, 0)
+  border-top-color: #0D97F7
+  border-width: 9px
+  left: 50%
+  margin-left: -9px

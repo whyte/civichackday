@@ -2,7 +2,7 @@
 <html>
 <head>
     <meta charset=utf-8>
-    <title>Galaxy Zoo Confrence</title>
+    <title>Adler Civic Hack Day</title>
     <link rel="stylesheet" href="styles/style.css" type="text/css">
     <link rel="stylesheet" href="styles/leaflet.css" type="text/css">
 
@@ -15,18 +15,73 @@
     <script type="text/javascript" src="lib/jquery-1.9.1.min.js"></script>
     
     <script type="text/javascript">
+        function scroll_to(event) {
+            var ele;
+            event.preventDefault();
+            ele = $(event.target).attr("href");
+            console.log("ele is ", ele);
+            $('html, body').animate({
+                scrollTop: ($(ele).offset().top)
+            }, 600);
+        }
+
+        function current_section(){
+            var section;
+            $("section").each( function(){
+                console.log( $("body").scrollTop(), $(this).position().top + $(this).height() );
+                if ( $(this).position().top + $(this).height() > $("body").scrollTop() ){
+                    section = $(this)[0].id;
+                    return false;
+                }
+                return true;
+            });
+            return section;
+        }
+
+        function update_nav_bar(){
+            if ($("body").scrollTop() < (426)){
+                $("nav").removeClass("fixed");
+                $("body").css("margin-top", "0px")
+            }
+            else {
+                $("nav").addClass("fixed");
+                $("body").css("margin-top", "50px")
+                section = current_section();
+                
+
+                no = $("nav a[href=#"+section+"]").index()
+                if(no >= 0){
+                    $("nav a").removeClass('active');
+                    $("nav a[href=#"+section+"]").addClass("active")
+                    $("nav").removeClass("pos1 pos2 pos3 pos4 pos5")
+                    $("nav").addClass("pos"+(no+1))
+
+                }
+            }
+        }
+
     	$(document).ready(function(){
-    		var map = L.map('map').setView([-33.866667, 151.2], 13);
+    		var map = L.map('map', {scrollWheelZoom: false}).setView([41.866317,-87.606761], 13);
 
 				L.tileLayer('http://{s}.tile.cloudmade.com/703a104d15d44e2885f6cedeaaec6d30/22677/256/{z}/{x}/{y}.png').addTo(map);
 
 				var icon = L.icon({
-					 iconUrl: 'images/marker-icon.png',
-    			 iconRetinaUrl: 'images/marker-icon@2x.png',
-    			 shadowUrl: 'images/marker-shadow.png'
-				});
+                    iconSize: new L.Point(25, 41),
+                    iconAnchor: new L.Point(12, 41),
+                    popupAnchor: new L.Point(1, -34),
 
-				L.marker([-33.866667, 151.2], {icon: icon}).addTo(map)
+                    shadowSize: new L.Point(41, 41),
+                    iconUrl: 'images/marker-icon.png',
+                    iconRetinaUrl: 'images/marker-icon@2x.png',
+                    shadowUrl: 'images/marker-shadow.png'
+                });
+
+                $(window).scroll(update_nav_bar);
+
+				$(".scroll").click(scroll_to);
+
+                window.marker = L.marker([41.866317,-87.606761], {icon: icon}).addTo(map)
+                update_nav_bar();
     	});
     </script>
     
@@ -35,117 +90,136 @@
 <body>
 
 		<header>
-			<h1>Galaxy Morphology in the Era of Large Surveys</h1>
-			<p class='details'><span class='date'>10 May 2001</span><span class='venue'>Royal astronomical society</span><span class='address'>london, United kingodm</span></p>
+            <img src='images/civic-hack-logo.png'></img>
+			
 		</header>
-    <section id='about'>
-    	<h2>About the Conference</h2>
+
+    <nav>
+        <div class='navLinks'>
+            <a class='scroll' href='#youth'>What is Civic Youth hack Day?</a>
+            <a class='scroll' href='#what'>What is a Civic Hack Day?</a>
+            <a class='scroll' href='#participate'>How do I participate?</a>
+            <a class='scroll' href='#where'>Where is the Hack Day?</a>
+            <a class='scroll' href='#sponsor'>How can I sponsor?</a>
+        </div>
+    </nav>
+    <section id='youth'>
+    	<h2 class='arrow_box'>What is Civic Youth Hack Day?</h2>
     	<article>
-    		<p> Important clues to the formation history of galaxies can be found in their morphologies. These data provide complimentary information to the star formation history and chemical composition as revealed by photometry and spectra. This meeting will focus on recent results in extragalactic astronomy which used morphological information on galaxies obtained from large survey data. </p>
-    		<p>The sheer size of recent extragalactic surveys had made the visual classification of galaxy morphologies impractical. The Galaxy Zoo project (www.galaxyzoo.org) solved this problem by asking members of the public to help classify galaxies via an internet tool, and has been part of a reinvigoration of interest in the morphologies of galaxies and what they reveal and the formation processes.  For example, the morphological information collected by Galaxy Zoo has shown itself to be a powerful database for studying galaxy evolution, with now more than 30 peer-reviewed papers on a variety of topics from the study of local mergers, to red spirals and blue ellipticals, tidal dwarf galaxies, dustlanes, the morphologies of AGN hosts, and the discovery of "green peas" and "Voorwerjpies" and more.</p>
-    		<p>
-    			This meeting will bring together a variety of researchers working in the area of extragalactic astronomy, including members of the Galaxy Zoo team, to discuss recent results and preview forthcoming developments.
+    		<p>Young people are often the ones who are the most acutely aware of the problems in their communities but they least able to effect change. The Adler Day Civic Youth Hack Day will place young people with well defined problems in teams with engineers/scientsts/web developers/designers and a host of other skilled profesionals, in an attempt to find solutions to those issues in a 24 hour sprint. 
     		</p>
+
+            <p>As part of the National Day of civic hacking, the Adler will be host to 5 teams all focused on trying to improve communities within Chicago. We need your help to make this event as powerful as possible. If you would like to submit a team for the day you can do so <a href="#participate">here</a> or if you would like to donate money or resources to the event you can do so <a class='scroll' href='#sponsor'>here</a>.
+            </p>
     	</article>
     </section>
-    <section id='organisers'>
-    	<h2>Conference Organisers</h2>
-    		<ul>
-    			<li> <img src='images/people/kelly.png'></img> <p class='name'>Kelly Borden</p> <p class='affiliation'>Adler</p></li>
-    			<li> <img src='images/people/kelly.png'></img> <p class='name'>Kelly Borden</p> <p class='affiliation'>Adler</p></li>
-    			<li> <img src='images/people/kelly.png'></img> <p class='name'>Kelly Borden</p> <p class='affiliation'>Adler</p></li>
-    			<li> <img src='images/people/kelly.png'></img> <p class='name'>Kelly Borden</p> <p class='affiliation'>Adler</p></li>
-    			<li> <img src='images/people/kelly.png'></img> <p class='name'>Kelly Borden</p> <p class='affiliation'>Adler</p></li>
-    		</ul>
-    </section>
-    <section id='schedule'>
-    	<h2>Schedule of Events</h2>
-    	<article>
-    		<ul>
-    			<li>
-    				<span class='time'>10-10.30am</span> <p>Coffee</p>
-    			</li>
-    			<li>
-    				<span class='time'>10.30-11am</span> 
-    				<p>Importance of morphology on our
-							understanding galaxy evolution
-							(Invited, TBC)
-						</p>
-    			</li>
-    			<li>
-    				<span class='time'>11am-11:30am</span> 
-    				<p> Connecting Theory and
-                    Observations of Galaxy Morphology
-                    (Invited, TBC)
-            </p>
-    			</li>
-    			<li>
-    				<span class='time'>11:30am-12pm</span> 
-    				<p> Contributed science talks</p>
-    			</li>
-    			<li>
-    				<span class='time'>12-1pm</span> 
-    				<p> Automated methods of getting
-                    morphology, or morphology proxies
-                   (Invited, TBC)
-            </p>
 
-    			</li>
-    			<li>
-    				<span class='time'>1-2pm</span> 
-    				<p> Lunch</p>
-    			</li>
-    			<li>
-    				<span class='time'>2.00-3pm</span> 
-    				<p> Contributed science talks </p>
-    			</li>
-    			<li>
-    				<span class='time'>3-3.30pm</span> 
-    				<p> Morphology at high redshift 
-                   (Invited: Jennifer Lotz)
+    <section id='what'>
+        <h2 class='arrow_box'>What is The National Day of Civic Hacking?</h2>
+        <article>
+            <p> <a href="http://hackforchange.org/">National Day of Civic Hacking</a> is a national event that will take place June 1-2, 2013, in cities across the nation. The event will bring together citizens, software developers, and entrepreneurs from all over the nation to collaboratively create, build, and invent new solutions using publicly-released data, code and technology to solve challenges relevant to our neighborhoods, our cities, our states and our country. National Day of Civic Hacking will provide citizens an opportunity to do what is most quintessentially American: roll up our sleeves, get involved and work together to improve our society.
             </p>
-    			</li>
-    			<li>
-    				<span class='time'>3.30-4pm</span>
-    				<p>Tea</p>
-    			</li>
-    			<li>
-    				<span class='time'>4-6pm</span> 
-    				<p>RAS monthly meeting (free to all)</p>
-    			</li>
-    			
-
-
-    		</ul>
-    	</article>
+        </article>
     </section>
-    <section id='offer'>
-    	<h3>Free to RAS members $15 ( $5 for students; note students can join the RAS for only $1)</h3>
-    	<a class='button' href='/register'>Register</a>
+
+      
+    <section id='participate'>
+    	<h2 class='arrow_box'>How do I Participate?</h2>
+    		<p>We are looking for 5 teams of around 10 people to <a class='scroll' href="#signup">sign up</a> for the event. Before the event each team with be paired up with a youth team and problem statment so that on the morning of the hack day everyone can get stuck in to making Chicago a better place. The youth team's will consist of a mentor and 1 or 2 young people.</p>
+            <p>The key to a groups success is having a varied set of skills and roles. Below are some of the key people we think you might want to have on your team</p>
+
+            <ul class='roles'>
+                <li> <img src='images/people/teen-1.png'></img> 
+                    <h3>Problem Owner</h3>
+                    <p> This person has a problem they need help solving and some vision for a solution. They are an engaged member of the community, personally impacted by the problem they bring and a direct stakeholder in the design and outcomes of the solution.
+
+                    </p> 
+                </li>
+                <li> <img src='images/people/teen-2.png'></img> 
+                    <h3>Domain Expert</h3>
+                    <p> This person is a legitimate, recognized and respected content expert with significant and authentic experience and/or membership in the context, environment, community, governance, industry or network where the problem resides.
+                    </p> 
+                </li>
+                <li> <img src='images/people/man-1.png'></img> 
+                    <h3>Hacker</h3>
+                    <p> This person is a designer, engineer, scientist, programmer, artist, technician, educator, tinkerer, carpenter, welder, tradesman, or any skills expert who can help the team create something new.
+                    </p> 
+                </li>
+                <li> <img src='images/people/woman-1.png'></img> 
+                    <h3>Mentor</h3>
+                    <p> This person has what it takes to guide a young person to make a meaningful contribution to the team. They  have strong enough professional experience and technical ability to be a Hacker themselves, as well as strong command of the teaching pedagogy needed to structure and scaffold the experience for young people.
+                    </p> 
+                </li>
+                <li> <img src='images/people/man-2.png'></img> 
+                    <h3>Journalist</h3>
+                    <p> This person is a creative content producer who will report on team accomplishments using digital and social media, [micro]blogs, or websites to tell a story about the team, their problem, and their progress towards a solution. 
+                    </p> 
+                </li>
+                <li> <img src='images/people/man-3.png'></img> 
+                    <h3>Project Manager</h3>
+                    <p> This person will manage the project deliverables, coordinate team roles and responsibilities, communicate progress and expectations, and keep team members focused on task.
+                    </p> 
+                </li>
+            </ul>
     </section>
-    <section id='locationAndContact'>
-    	<h2>Location & Contact Info</h2>
+
+    <section id='signup'>
+    	<h2>Interested in forming a tem for Civic Hack Day? Sign Up!</h2>
+    	<a href ='https://docs.google.com/forms/d/14P4gAqVKSmeA2GTKtKBaVh27ZvEg19MqTA5gcTl0LFs/viewform' class='button'>Sign up</a>
+    </section>
+
+    <section id='where'>
+    	<h2 class='arrow_box'>Where is Civic Hack Day?</h2>
     	<div id='map'></div>
 
     	<div class='details'>
 	    	<div class='address'> 
-	    		<h3>Burlington House</h3> 
-	    		<p> 31 Burlington Gardens <br/>
-						  London W1J 0PG
-					</p>
-				</div>
+	    		<h3>Adler Planetarium</h3> 
+	    		<p> 1300 S Lake Shore Dr<br/>
+					Chicago, IL, 60657
+				</p>
+			</div>
 	    	<div class='contact'>
 	    		<h3>Contact</h3>
-	    		<p class='phone'>+44 905 392 09</p>
-	    		<p class='email'><a href='mailto:gzconf@zooniverse.org'>gzconf@zooniverse.org</a></p>
-	    		<p class='twitter'><a href='http://twitter.com/gzconf'>@gzconf</a></p>
+	    		<p class='phone'>312 342 2200</p>
+	    		<p class='email'><a href='mailto:gzconf@zooniverse.org'>hack@adlerplanetarium.org</a></p>
+	    		<p class='twitter'><a href='http://twitter.com/adlercivichack'>@adlercivichack</a></p>
 	    	</div>
 	   </div>
     </section>
 
+
+    <section id='sponsor'>
+        <h2>Interested in Sponsoring?</h2>
+        <a  class='button' href="https://docs.google.com/a/zooniverse.org/forms/d/1KeqzzqGJLQAKMQqQM9twGAphmYGpVjN-61tDp8UJ0KY/viewform">Let us know!</a>
+    </section>
+
+    <section id="sponsorLogos">
+        <h2 class='arrow_box'>Sponsors</h2>
+        <ul>
+            <li>
+                <a href="http://www.freespiritmedia.org/" target="_blank"><img width=150 src='images/logos/FSM_Logo_Web_Smalltrans.png'></img></a>
+                <p>Free Spirit Media</p>
+            </li>
+
+            <li>
+                <a href='http://umbmentoring.org/' target="_blank"><img width=150 src='images/logos/CEBMtrans.png'></img></a>
+                <p>The Center for Evidence-Based Mentoring</p>
+            </li>
+
+             <li>
+                <a href="http://www.architecture.org/cafteens" target='_blank'><img width=300 src='images/logos/cafteenstrans.png'></img></a>
+                <p>Chicago Architecture Foundation Teens</p>
+            </li>
+            <li>
+                <a href="www.adlerplanetarium.org" target='_blank'><img width=160px src='images/logos/adlerLogo.png'></img></a>
+                <p>Adler Planetarium</p>
+            </li>
+        </ul>
+    </section>
+
     <footer>
-    	<span class='copyright'> Galaxy Zoo Confrence  ©2013</span>
-    	<a  href='register' class='button'>Register</a>
+    	
     </footer>
 </body>
 </html>

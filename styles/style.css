@@ -1,7 +1,6 @@
 html {
   background-color: #bfbfbf;
   color: #00142f;
-  font-family: "HelveticaNeue-Light", "Helvetica Neue Light", "Helvetica Neue", Helvetica, Arial, "Lucida Grande", sans-serif;
   text-align: center;
   padding: 0px;
   margin: 0px;
@@ -10,6 +9,9 @@ body {
   width: 1200px;
   padding: 0px;
   margin: 0px auto 0px auto;
+  background-color: #e7e7e7;
+  -webkit-box-shadow: 0 0 5px 5px #888;
+  box-shadow: 0 0 5px 5px #888;
 }
 body a {
   text-decoration: none;
@@ -18,63 +20,118 @@ body h1 {
   font-weight: 200;
 }
 body h2 {
-  font-family: Georgia;
-  font-style: italic;
   font-size: 25px;
   font-weight: 200;
   margin-bottom: 75px;
-}
-body h2:after {
-  content: "";
-  display: block;
-  width: 150px;
-  height: 5px;
-  background-color: #000;
-  text-align: center;
-  margin: 30px auto 30px auto;
+  width: 480px;
+  height: 53px;
+  color: #fff;
+  line-height: 53px;
+  margin-left: auto;
+  margin-right: auto;
 }
 body p {
   font-size: 14px;
   font-weight: 200;
 }
 body header {
-  height: 425px;
-  background-image: url("../images/topBanner.jpg");
-  background-color: #000;
+  height: 426px;
+  background-image: url("/images/top-banner.jpg");
   color: #fff;
-  border-bottom: 5px solid #a7cf00;
   position: relative;
-  margin: -21px 0px;
+  border-top: 5px solid #000;
+  text-align: center;
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
+  padding-top: 70px;
 }
-body header h1 {
+body nav {
+  background-color: #f8f8f8;
+  z-index: 20;
+  -webkit-box-shadow: 0 1px 10px rgba(0,0,0,0.5);
+  box-shadow: 0 1px 10px rgba(0,0,0,0.5);
+  width: 1200px;
   position: relative;
-  top: 265px;
-  margin: 0px 200px;
-  padding-bottom: 12px;
-  border-bottom: 1px solid rgba(255,255,255,0.3);
 }
-body header p {
-  position: relative;
-  top: 265px;
+body nav.pos1:after,
+body nav.pos1:before {
+  left: 10%;
 }
-body header p span {
-  margin: 0px;
-  font-size: 11px;
-  font-weight: 600;
-  text-transform: uppercase;
-  letter-spacing: 1px;
+body nav.pos2:after,
+body nav.pos2:before {
+  left: 30%;
 }
-body header p span:after {
-  content: "";
-  width: 8px;
-  height: 8px;
-  margin-left: 9px;
-  margin-right: 9px;
+body nav.pos3:after,
+body nav.pos3:before {
+  left: 50%;
+}
+body nav.pos4:after,
+body nav.pos4:before {
+  left: 70%;
+}
+body nav.pos5:after,
+body nav.pos5:before {
+  left: 90%;
+}
+body nav:after,
+body nav:before {
+  top: 100%;
+  border: solid transparent;
+  content: " ";
+  height: 0;
+  width: 0;
+  position: absolute;
+  pointer-events: none;
+  -webkit-transition: left 0.5s ease-in-out;
+  -moz-transition: left 0.5s ease-in-out;
+  -o-transition: left 0.5s ease-in-out;
+  -ms-transition: left 0.5s ease-in-out;
+  transition: left 0.5s ease-in-out;
+}
+body nav:after {
+  border-color: rgba(248,248,248,0);
+  border-top-color: #f8f8f8;
+  border-width: 8px;
+  left: 50%;
+  margin-left: -8px;
+}
+body nav:before {
+  border-color: rgba(248,248,248,0);
+  border-top-color: #f8f8f8;
+  border-width: 14px;
+  left: 50%;
+  margin-left: -14px;
+}
+body nav .navLinks {
+  margin-left: auto;
+  margin-right: auto;
+}
+body nav .navLinks a {
+  width: 235px;
+  height: 50px;
   display: inline-block;
-  background-image: url("../images/tinyStar.png");
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
+  padding: 14px 0px 0px 0px;
+  color: #000;
+  margin: 0px;
+  border-right: 1px solid #dfdfdf;
+  font-size: 15px;
 }
-body header p span:last-child:after {
-  background-image: none;
+body nav .navLinks a.active {
+  color: #0084ff;
+}
+body nav .navLinks a:first-child {
+  border-left: none;
+}
+body nav .navLinks a:last-child {
+  border-right: none;
+}
+body nav.fixed {
+  position: fixed;
+  top: 0px;
 }
 body footer {
   background-color: #000;
@@ -100,107 +157,82 @@ body section {
   -webkit-box-sizing: border-box;
   -moz-box-sizing: border-box;
   box-sizing: border-box;
-  padding: 65px 100px 90px 100px;
+  padding: 60px 185px 60px 185px;
+  text-align: center;
 }
 body section:nth-child(even) {
-  background-color: #e1e1e1;
+  background-color: #e7e7e7;
 }
 body section:nth-child(odd) {
-  background-color: #d2d2d2;
+  background-color: #e0e0e0;
 }
-body section#about article {
+body section#what article {
   text-align: left;
-  -webkit-column-width: 259px;
-  -moz-column-width: 259px;
-  column-width: 259px;
-  -webkit-column-rule: 1px outset #b5b5b5;
-  -moz-column-rule: 1px outset #b5b5b5;
-  column-rule: 1px outset #b5b5b5;
   line-height: 24px;
-  height: 269px;
-  -webkit-column-gap: 50px;
-  -moz-column-gap: 50px;
-  column-gap: 50px;
 }
-body section#about article p:first-child {
-  margin-top: 0px;
+body section#youth article {
+  text-align: left;
+  line-height: 24px;
 }
-body section#offer h3 {
+body section#participate h3 {
   font-size: 23px;
   font-weight: 300;
   margin-bottom: 30px;
 }
-body section#organisers ul {
+body section#participate p {
+  text-align: left;
+}
+body section#participate ul {
   list-style: none;
-  margin: 0px 0px 0px 0px;
+  margin: 80px 0px 0px 0px;
   padding: 0px;
+  width: 100%;
+  height: 1000px;
 }
-body section#organisers ul li {
-  display: inline-block;
-  margin: 0px 61px 0px 0px;
-}
-body section#organisers ul li:last-child {
-  margin-right: 0px;
-}
-body section#organisers ul li img {
-  width: 125px;
-  height: 125px;
-  -webkit-border-radius: 125px;
-  border-radius: 125px;
-  border: 5px solid #e1e1e1;
-}
-body section#organisers ul li p.name {
-  font-size: 15px;
-  font-weight: 600;
-  margin: 20px 0px 0px 0px;
-}
-body section#organisers ul li p.affiliation {
-  font-size: 11px;
-  font-weight: normal;
-  margin: 2px 0px 0px 0px;
-  text-transform: uppercase;
-}
-body section#schedule article {
+body section#participate ul li {
+  float: left;
+  margin: 0px 150px 0px 0px;
+  width: 170px;
+  height: 500px;
   text-align: center;
 }
-body section#schedule article ul {
-  list-style: none;
-  padding: 0px;
-  -webkit-column-count: 2;
-  -moz-column-count: 2;
-  column-count: 2;
-  -webkit-column-rule: 1px outset #b5b5b5;
-  -moz-column-rule: 1px outset #b5b5b5;
-  column-rule: 1px outset #b5b5b5;
-  -webkit-column-gap: 40px;
-  -moz-column-gap: 40px;
-  column-gap: 40px;
-  height: 250px;
-  width: 630px;
-  margin: 0px auto;
+body section#participate ul li:first-child {
+  padding-left: 0px;
 }
-body section#schedule article ul li {
-  text-align: left;
-  margin-bottom: 10px;
-}
-body section#schedule article ul li p {
-  width: 200px;
-  display: inline-block;
-  vertical-align: top;
-  margin: 0px;
-  padding: 0px;
-  font-size: 14px;
-}
-body section#schedule article ul li span {
-  width: 90px;
-  font-size: 10px;
-  font-weight: 600;
+body section#participate ul li:nth-child(3n+3) {
   margin-right: 0px;
-  display: inline-block;
-  vertical-align: top;
-  line-height: 17px;
 }
-body section#locationAndContact #map {
+body section#participate ul li img {
+  width: 150px;
+}
+body section#participate ul li p {
+  font-size: 15px;
+  text-align: center;
+  width: 100%;
+  margin: 20px 0px 0px 0px;
+}
+body section#signup,
+body section#sponsor {
+  background-color: #0d97f7;
+  height: 240px;
+}
+body section#signup h2,
+body section#sponsor h2 {
+  margin-top: 0px;
+  padding-top: 0px;
+  width: 100%;
+  text-align: center;
+  margin-bottom: 25px;
+}
+body section#signup .button,
+body section#sponsor .button {
+  background-color: #d6fe55;
+  color: #000;
+}
+body section#where {
+  padding: 60px 100px 60px 100px;
+}
+body section#where #map {
   width: 760px;
   height: 255px;
   margin: 0px 20px 0px 0px;
@@ -208,7 +240,7 @@ body section#locationAndContact #map {
   vertical-align: top;
   text-align: left;
 }
-body section#locationAndContact .details {
+body section#where .details {
   display: inline-block;
   vertical-align: top;
   text-align: left;
@@ -219,27 +251,39 @@ body section#locationAndContact .details {
   border-left: 1px solid #b2b2b2;
   padding: 0px 0px 0px 20px;
 }
-body section#locationAndContact .details .address {
+body section#where .details .address {
   margin-bottom: 112px;
 }
-body section#locationAndContact .details .address h3 {
+body section#where .details .address h3 {
   margin-top: 0px;
   margin-bottom: 5px;
   font-size: 18px;
 }
-body section#locationAndContact .details .address p {
+body section#where .details .address p {
   margin-top: 0px;
   font-weight: 200;
   font-size: 14px;
 }
-body section#locationAndContact .details .contact h3 {
+body section#where .details .contact h3 {
   font-size: 11px;
   font-weight: 600;
   margin-bottom: 0px;
 }
-body section#locationAndContact .details .contact p {
+body section#where .details .contact p {
   margin: 5px 0;
   padding: 0px;
+}
+#sponsorLogos ul {
+  list-style: none;
+  padding: 0px;
+  margin: 0px;
+  width: 100%;
+  height: 300px;
+}
+#sponsorLogos ul li {
+  float: left;
+  width: 276px;
+  margin-bottom: 30px;
 }
 .button {
   background-color: #0a54ba;
@@ -247,7 +291,27 @@ body section#locationAndContact .details .contact p {
   font-weight: 600;
   font-size: 18px;
   padding: 10px 40px 10px 40px;
-  -webkit-border-radius: 2px;
-  border-radius: 2px;
+  -webkit-border-radius: 5px;
+  border-radius: 5px;
   text-decoration: none;
+}
+.arrow_box {
+  position: relative;
+  background: #0d97f7;
+}
+.arrow_box:after {
+  top: 100%;
+  border: solid transparent;
+  content: " ";
+  height: 0;
+  width: 0;
+  position: absolute;
+  pointer-events: none;
+}
+.arrow_box:after {
+  border-color: rgba(13,151,247,0);
+  border-top-color: #0d97f7;
+  border-width: 9px;
+  left: 50%;
+  margin-left: -9px;
 }

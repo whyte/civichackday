@@ -1,9 +1,9 @@
 #!/usr/bin/env ruby
 require 'pry'
 require 'aws-sdk'
-AWS.config access_key_id: ENV['S3_ACCESS_ID'], secret_access_key: ENV['S3_SECRET_KEY']
+AWS.config access_key_id: 'AKIAIQZ2TDA5U6GEFWYA', secret_access_key: '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'
 s3 = AWS::S3.new
-bucket = s3.buckets['ras2013.galaxyzoo.org']
+bucket = s3.buckets['civichack.adlerplanetarium.org']
 
 styles = Dir.glob("styles/*.css")
 lib    = Dir.glob("lib/**/*")
@@ -30,7 +30,7 @@ to_upload.each.with_index do |file, index|
   end
   
   puts "#{ '%2d' % (index + 1) } / #{ '%2d' % total }: Uploading #{ file } as #{ content_type }"
-  bucket.objects["/"].write file: file, acl: :public_read, content_type: content_type
+  bucket.objects["#{file}"].write file: file, acl: :public_read, content_type: content_type
 end
 
 
