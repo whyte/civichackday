@@ -20,8 +20,9 @@ body h1 {
   font-weight: 200;
 }
 body h2 {
-  font-size: 25px;
+  font-size: 24px;
   font-weight: 200;
+  font-family: Helvetica Neue, Helvetica, sans-serif;
   margin-bottom: 75px;
   width: 480px;
   height: 53px;
@@ -31,8 +32,10 @@ body h2 {
   margin-right: auto;
 }
 body p {
-  font-size: 14px;
+  font-size: 16px;
   font-weight: 200;
+  font-family: helvetica neue, helvetica, sans-serif;
+  line-height: 30px;
 }
 body header {
   height: 426px;
@@ -49,8 +52,8 @@ body header {
 body nav {
   background-color: #f8f8f8;
   z-index: 20;
-  -webkit-box-shadow: 0 1px 10px rgba(0,0,0,0.5);
-  box-shadow: 0 1px 10px rgba(0,0,0,0.5);
+  -webkit-box-shadow: 0 1px 6px rgba(0,0,0,0.1);
+  box-shadow: 0 1px 6px rgba(0,0,0,0.1);
   width: 1200px;
   position: relative;
 }
@@ -108,6 +111,8 @@ body nav .navLinks {
   margin-right: auto;
 }
 body nav .navLinks a {
+  font-family: Helvetica Neue, Helvetica, sans-serif;
+  font-weight: 500;
   width: 235px;
   height: 50px;
   display: inline-block;
@@ -116,9 +121,9 @@ body nav .navLinks a {
   box-sizing: border-box;
   padding: 14px 0px 0px 0px;
   color: #000;
-  margin: 0px;
+  margin: 4px 0px 0px 0px;
   border-right: 1px solid #dfdfdf;
-  font-size: 15px;
+  font-size: 13px;
 }
 body nav .navLinks a.active {
   color: #0084ff;
@@ -175,9 +180,10 @@ body section#youth article {
   line-height: 24px;
 }
 body section#participate h3 {
-  font-size: 23px;
-  font-weight: 300;
+  font-size: 15px;
+  font-weight: 600;
   margin-bottom: 30px;
+  font-family: helvetica neue, helvetica, sans-serif;
 }
 body section#participate p {
   text-align: left;
@@ -187,7 +193,7 @@ body section#participate ul {
   margin: 80px 0px 0px 0px;
   padding: 0px;
   width: 100%;
-  height: 1000px;
+  height: 480px;
 }
 body section#participate ul li {
   float: left;
@@ -206,10 +212,14 @@ body section#participate ul li img {
   width: 150px;
 }
 body section#participate ul li p {
-  font-size: 15px;
   text-align: center;
   width: 100%;
   margin: 20px 0px 0px 0px;
+  line-height: 22px;
+  font-size: 13px;
+}
+body section#participate ul li img {
+  width: 100px;
 }
 body section#signup,
 body section#sponsor {
@@ -228,6 +238,7 @@ body section#signup .button,
 body section#sponsor .button {
   background-color: #d6fe55;
   color: #000;
+  font-family: helvetica neue, helvetica, sans-serif;
 }
 body section#where {
   padding: 60px 100px 60px 100px;
@@ -258,6 +269,7 @@ body section#where .details .address h3 {
   margin-top: 0px;
   margin-bottom: 5px;
   font-size: 18px;
+  font-family: helvetica neue, helvetica, sans-serif;
 }
 body section#where .details .address p {
   margin-top: 0px;
@@ -284,6 +296,9 @@ body section#where .details .contact p {
   float: left;
   width: 276px;
   margin-bottom: 30px;
+}
+#sponsorLogos ul li p {
+  display: none;
 }
 .button {
   background-color: #0a54ba;

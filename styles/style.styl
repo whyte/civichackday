@@ -22,18 +22,21 @@ body
     
     
   h2
-    font-size: 25px 
+    font-size: 24px
     font-weight: 200
+    font-family: Helvetica Neue, Helvetica, sans-serif
     margin-bottom: 75px
     width: 480px
-    height: 53px 
-    color: white
+    height: 53px
+    color: #fff
     line-height: 53px
     margin-left: auto
     margin-right: auto
   p
-    font-size: 14px 
+    font-size: 16px
     font-weight: 200
+    font-family: helvetica neue, helvetica, sans-serif
+    line-height: 30px
 
   header
     height: 426px
@@ -48,7 +51,7 @@ body
   nav 
     background-color: #F8F8F8
     z-index: 20
-    box-shadow: 0 1px 10px rgba(0, 0, 0, 0.5)
+    box-shadow: 0 1px 6px rgba(0,0,0,0.1)
     width: 1200px
     position: relative
 
@@ -97,15 +100,18 @@ body
       margin-left: auto
       margin-right: auto
       a 
+
+        font-family: Helvetica Neue, Helvetica, sans-serif;
+        font-weight: 500;        
         width: 235px
         height: 50px 
         display: inline-block
         box-sizing: border-box
         padding:  14px 0px 0px 0px 
         color: black
-        margin: 0px
+        margin: 4px 0px 0px 0px 
         border-right: 1px solid #DFDFDF
-        font-size: 15px
+        font-size: 13px
         &.active
           color: #0084ff
         // border-left: 1px solid #FFFFFF
@@ -156,9 +162,10 @@ body
 
     &#participate
       h3 
-        font-size: 23px 
-        font-weight: 300
+        font-size: 15px
+        font-weight: 600
         margin-bottom: 30px
+        font-family: helvetica neue, helvetica, sans-serif
       p 
         text-align: left
       ul 
@@ -166,7 +173,7 @@ body
         margin: 80px 0px 0px 0px
         padding: 0px
         width: 100%
-        height: 1000px
+        height: 480px
         li
           float:left 
           margin: 0px 150px 0px 0px
@@ -181,10 +188,14 @@ body
             width: 150px
             
           p
-            font-size: 15px
+            
             text-align: center
             width: 100%
             margin: 20px 0px 0px 0px
+            line-height: 22px
+            font-size: 13px
+          img 
+            width: 100px
            
 
     &#signup, &#sponsor
@@ -197,8 +208,9 @@ body
         text-align: center
         margin-bottom: 25px
       .button
-        background-color: #D6FE55
-        color: black
+        background-color: #d6fe55
+        color: #000
+        font-family: helvetica neue, helvetica, sans-serif
     &#where 
       padding: 60px 100px 60px 100px
       #map
@@ -224,6 +236,7 @@ body
             margin-top: 0px
             margin-bottom: 5px
             font-size: 18px
+            font-family: helvetica neue, helvetica, sans-serif
           p 
             margin-top: 0px
             font-weight: 200
@@ -248,7 +261,8 @@ body
       float: left 
       width: 276px
       margin-bottom: 30px
-
+      p
+        display: none
 
 .button
   background-color: #0A54BA

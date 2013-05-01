@@ -19,7 +19,7 @@
             var ele;
             event.preventDefault();
             ele = $(event.target).attr("href");
-            console.log("ele is ", ele);
+            
             $('html, body').animate({
                 scrollTop: ($(ele).offset().top)
             }, 600);
@@ -28,7 +28,7 @@
         function current_section(){
             var section;
             $("section").each( function(){
-                console.log( $("body").scrollTop(), $(this).position().top + $(this).height() );
+            
                 if ( $(this).position().top + $(this).height() > $("body").scrollTop() ){
                     section = $(this)[0].id;
                     return false;
@@ -257,6 +257,11 @@
             <li>
                 <a href="http://www.mikvachallenge.org/" target='_blank'><img width=70 src='images/logos/mikvlogo.jpg'></img></a>
                 <p>Mikva Challenge</p>
+            </li>
+
+            <li>
+                <a href="www.adlerplanetarium.org" target='_blank'><img width=160px src='images/logos/adlerLogo.png'></img></a>
+                <p>Adler Planetarium</p>
             </li>
         </ul>
 
